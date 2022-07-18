@@ -1,12 +1,12 @@
 import argparse
 import sys
-import os
 import shipyard_utils as shipyard
 try:
     import helpers
 except BaseException:
     from . import helpers
 
+EXIT_CODE_LOOK_QUERY_ERROR = 203
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -27,6 +27,7 @@ def create_query(look_sdk, body={}):
         print("query {new_query.id} created successfully")
     except Exception as e:
         print(f'Error running create query: {e}')
+        sys.exit(EXIT_CODE_LOOK_QUERY_ERROR)
     return new_query.id
 
 
