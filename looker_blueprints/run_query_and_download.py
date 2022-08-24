@@ -31,7 +31,7 @@ def run_query_and_download(sdk, query_id, file_format):
     try:
         # Options are csv, json, json_detail, txt, html, md, xlsx, sql (raw query), png, jpg
         response = sdk.run_query(query_id=query_id, result_format=file_format)
-        print("query {new_query.id} created successfully")
+        print(f'query with id {query_id} created successfully')
     except Exception as e:
         print(f'Error running create query: {e}')
         sys.exit(EXIT_CODE_QUERY_ERROR)

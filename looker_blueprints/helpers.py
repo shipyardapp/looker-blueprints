@@ -14,15 +14,15 @@ shipyard.logs.create_artifacts_folders(artifact_subfolder_paths)
 class MyApiSettings(api_settings.ApiSettings):
     def __init__(self, *args, **kw_args):
         self.base_url = kw_args.pop('base_url')
-        self.client_id = kw_args.pop("client_id")
-        self.client_secret = kw_args.pop("client_secret")
+        self.client_id = kw_args.pop('client_id')
+        self.client_secret = kw_args.pop('client_secret')
         super().__init__(*args, **kw_args)
 
     def read_config(self):
         config = super().read_config()
         config['base_url'] = self.base_url
-        config["client_id"] = self.client_id
-        config["client_secret"] = self.client_secret
+        config['client_id'] = self.client_id
+        config['client_secret'] = self.client_secret
         # return config settings class
         return config
 
