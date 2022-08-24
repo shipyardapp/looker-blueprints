@@ -24,7 +24,7 @@ def create_query(look_sdk, body={}):
         new_query = look_sdk.create_query(
             body=body
         )
-        print("query {new_query.id} created successfully")
+        print(f'query {new_query.id} created successfully')
     except Exception as e:
         print(f'Error running create query: {e}')
         sys.exit(EXIT_CODE_LOOK_QUERY_ERROR)
